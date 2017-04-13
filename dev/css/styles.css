@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans:300,400,700');
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans:300,400,700');
+.logo, .hero__heading--fantasy {
+  font-family: 'Kaushan Script', cursive; }
+
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+body {
+  overflow-x: hidden; }
+  body * {
+    box-sizing: border-box; }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+    margin: 0 auto; } }
+
+.container:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+p {
+  line-height: 1.5;
+  margin: 1.5rem 0; }
+
+.menu-panel {
+  padding: 30px 0;
+  background-color: rgba(255, 255, 255, 0.35); }
+
+.logo {
+  display: inline-block;
+  font-size: 2rem; }
+  .logo--bright {
+    color: #36aeea; }
+  .logo--muted {
+    color: #95a5ad; }
+
+.main-navigation {
+  display: inline-block;
+  margin: 0 40px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  color: #95a5ad; }
+  .main-navigation li {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 0;
+    cursor: pointer; }
+
+.nav-active, .main-navigation li:hover {
+  border-bottom: 2px solid #36aeea; }
+
+.btn {
+  display: inline-block;
+  padding: 13px 30px;
+  text-transform: uppercase;
+  background-color: #36aeea;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer; }
+  .btn--hollow {
+    background: none;
+    border: 2px solid #36aeea;
+    color: #36aeea; }
+  .btn--callback {
+    float: right;
+    padding-left: 40px;
+    padding-right: 40px; }
+  .btn--big {
+    font-size: 15px;
+    padding: 18px 65px; }
+
+header {
+  background-image: url("../images/backgrounds/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+
+.hero {
+  overflow: visible; }
+  .hero__wrapper {
+    padding: 149px 0 134px;
+    overflow: hidden; }
+  .hero__outer {
+    position: relative;
+    border: 3px solid #fff;
+    border-bottom: none;
+    color: #fff; }
+    .hero__outer:after {
+      position: absolute;
+      z-index: 15;
+      content: '';
+      display: block;
+      height: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 3px solid white; }
+  .hero__inner {
+    max-width: 50%;
+    padding: 40px; }
+  .hero__heading {
+    display: inline-block;
+    font-size: 50px;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: bold; }
+    .hero__heading--fantasy {
+      position: relative;
+      top: -20px;
+      color: #36aeea;
+      font-size: 60px;
+      font-weight: normal;
+      text-transform: none; }
+  .hero__description {
+    margin-top: 0;
+    color: #95a5ad; }
+  .hero__man {
+    position: absolute;
+    z-index: 10;
+    right: 113px;
+    top: -135px; }
+
+.about {
+  padding-bottom: 40px;
+  background: url("../images/backgrounds/dotted-map.png") 60% 50px no-repeat; }
+  .about__description {
+    width: 35%;
+    float: left; }
+  .about__photos {
+    width: 65%;
+    float: left;
+    padding-left: 50px; }
+  .about-image--small {
+    position: relative;
+    z-index: 30;
+    margin-top: -230px; }
+  .about-image--big {
+    position: relative;
+    z-index: 25;
+    margin-top: -45px;
+    margin-left: 100px; }
+  .about__container {
+    display: flex;
+    align-items: center; }
+  .about__heading {
+    position: relative;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 40px; }
+    .about__heading:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: -43px;
+      width: 80px;
+      height: 8px;
+      background-size: 16px 9px;
+      background-repeat: repeat;
+      background-image: linear-gradient(135deg, transparent 5px, #95a5ad 5px, #95a5ad 7px, transparent 7px, transparent 100%), linear-gradient(-135deg, transparent 5px, #95a5ad 5px, #95a5ad 7px, transparent 7px, transparent 100%); }
+
+.section--gray {
+  background-color: #f6f4f4; }
+
+/*# sourceMappingURL=styles.css.map */

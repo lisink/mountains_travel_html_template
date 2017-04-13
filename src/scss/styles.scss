@@ -1,0 +1,241 @@
+@import 'partials/variables';
+
+
+%fantasy-font {
+    font-family: 'Kaushan Script', cursive;
+}
+
+%regular-font {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+
+    @extend %regular-font;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.container {
+    @include minw($lg) {
+        width: $lg - 30px;
+        margin: 0 auto;
+    }
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+p {
+    line-height: 1.5;
+    margin: 1.5rem 0;
+}
+
+.menu-panel {
+    padding: 30px 0;
+    background-color: rgba(255, 255, 255, .35);
+}
+
+.logo {
+    display: inline-block;
+
+    @extend %fantasy-font;
+
+    font-size: 2rem;
+
+    &--bright {
+        color: $main-color;
+    }
+
+    &--muted {
+        color: $secondary-color;
+    }
+}
+
+.main-navigation {
+    display: inline-block;
+    margin: 0 40px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    color: $secondary-color;
+
+    li {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 10px 0;
+        cursor: pointer;
+
+        &:hover {
+            @extend .nav-active;
+        }
+    }
+}
+
+.nav-active {
+    border-bottom: 2px solid $main-color;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 30px;
+    text-transform: uppercase;
+    background-color: $main-color;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &--hollow {
+        background: none;
+        border: 2px solid $main-color;
+        color: $main-color;
+    }
+
+    &--callback {
+        float: right;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    &--big {
+        font-size: 15px;
+        padding: 18px 65px;
+    }
+}
+
+header {
+    background-image: url('../images/backgrounds/hero.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.hero {
+    overflow: visible;
+
+    &__wrapper {
+        padding: 149px 0 134px;
+        overflow: hidden;
+    }
+
+    &__outer {
+        position: relative;
+        border: 3px solid #fff;
+        border-bottom: none;
+        color: #fff;
+
+        &:after {
+            position: absolute;
+            z-index: 15;
+            content: '';
+            display: block;
+            height: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 3px solid white;
+        }
+    }
+
+    &__inner {
+        max-width: 50%;
+        padding: 40px;
+    }
+
+    &__heading {
+        display: inline-block;
+        font-size: 50px;
+        text-transform: uppercase;
+        line-height: 1;
+        font-weight: bold;
+
+        &--fantasy {
+            position: relative;
+            top: -20px;
+
+            color: $main-color;
+            @extend %fantasy-font;
+            font-size: 60px;
+            font-weight: normal;
+            text-transform: none;
+        }
+    }
+
+    &__description {
+        margin-top: 0;
+        color: $secondary-color;
+    }
+
+    &__man {
+        position: absolute;
+        z-index: 10;
+        right: 113px;
+        top: -135px;
+    }
+}
+
+.about {
+    padding-bottom: 40px;
+    background: url('../images/backgrounds/dotted-map.png') 60% 50px no-repeat;
+
+    &__description {
+        width: 35%;
+        float: left;
+    }
+
+    &__photos {
+        width: 65%;
+        float: left;
+        padding-left: 50px;
+    }
+
+    &-image--small {
+        position: relative;
+        z-index: 30;
+        margin-top: -230px;
+    }
+
+    &-image--big {
+        position: relative;
+        z-index: 25;
+        margin-top: -45px;
+        margin-left: 100px;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__heading {
+        position: relative;
+        font-weight: bold;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-top: 40px;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -43px;
+            width: 80px;
+            height: 8px;
+            background-size: 16px 9px;
+            background-repeat: repeat;
+            background-image: linear-gradient(135deg, transparent 5px, $secondary-color 5px, $secondary-color 7px, transparent 7px, transparent 100%), linear-gradient(-135deg, transparent 5px, $secondary-color 5px, $secondary-color 7px, transparent 7px, transparent 100%);
+        }
+    }
+}
+
+.section--gray {
+    background-color: #f6f4f4;
+}

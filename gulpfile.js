@@ -93,8 +93,12 @@ gulp.task('build_html_prod', function buildHTML() {
 
 
 gulp.task('serve', function() {
-    var server = gls.static([outputPath]);
+    var server = gls.static(outputPath);
     server.start();
+
+    watch([outputPath+'/**/*.css', outputPath+'/*.html', outputPath+'/**/*.js'], function (file) {
+        server.notify.apply(server, [file]);
+    });
 });
 
 gulp.task('watch', function () {
