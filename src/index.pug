@@ -59,21 +59,19 @@ html
                         img(src='images/mnt_guy.jpg' alt='' class='about-image about-image--small')
             section.journal
                 .container
-                    h2.section__heading our journal
-                    .journal
-                        .journal-item.journal-item--wide
-                            .journal-item__picture
-                                .journal-item__icon
-                                img(src='' alt='')
-                            .journal-item__description.journal-item__description--right
-                                h3.journal-item__heading love
-                                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus laboriosam, similique doloribus dolores excepturi omnis veniam, perspiciatis temporibus, rerum ex vitae optio illum tempora suscipit, maxime dignissimos unde non?
-                                .journal-item__count 01
-            section.newsletter-subscribe
+                    h2.section__heading our journals
+                    .journal-grid
+                        +journal_item(true)
+                        +journal_item()
+                        +journal_item(true, 'left')
+                        +journal_item()
+                        +journal_item(true, 'left')
+                        +journal_item(true, 'right')
+            section.newsletter-subscribe.section--gray
                 //- Parallax scrolling here or bg pos fixed
                 .container
-                    h2.section__heading.section__heading--small.section__heading--left
-                    p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi sunt fugit cum, ducimus doloremque expedita ratione reiciendis magni rem rerum nam aperiam iure veritatis repellat.
+                    h2.section__heading.section__heading--small.section__heading--left do you wanna go?
+                    p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi sunt fugit cum, ducimus doloremque expedita ratione reiciendis.
                     .input-group
                         input(type="text" placeholder='Your name:')
                         input(type="text" placeholder='Your phone:')
@@ -129,8 +127,6 @@ html
                                 input(type='text' placeholder='Phone')
                                 input(type='text' placeholder='E-mail')
                                 input(type='submit' value='send')
-
-
         footer
             .container
                 .copyright all rights reserved 2015
@@ -139,4 +135,6 @@ html
                     li.social-link.facebook
                     li.social-link.vk
                 .phone 1 234 234 234
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+        script(src='//unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js')
         script(src='js/scripts.js')

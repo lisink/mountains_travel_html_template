@@ -154,23 +154,50 @@ header {
     display: inline-block;
     font-size: 50px;
     text-transform: uppercase;
-    line-height: 1;
+    line-height: 35px;
     font-weight: bold; }
     .hero__heading--fantasy {
-      position: relative;
-      top: -20px;
       color: #36aeea;
       font-size: 60px;
       font-weight: normal;
       text-transform: none; }
   .hero__description {
-    margin-top: 0;
     color: #95a5ad; }
   .hero__man {
     position: absolute;
     z-index: 10;
     right: 113px;
     top: -135px; }
+
+.section__heading {
+  position: relative;
+  margin: 40px 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: #2c2e37; }
+  .section__heading--small {
+    font-size: 20px; }
+  .section__heading:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: -35px;
+    width: 80px;
+    height: 8px;
+    background-repeat: no-repeat;
+    background-image: url("../images/wave.svg"); }
+  .section__heading--left {
+    text-align: left; }
+    .section__heading--left:before {
+      left: 0;
+      right: auto;
+      margin: 0; }
 
 .about {
   padding-bottom: 40px;
@@ -210,8 +237,109 @@ header {
       height: 8px;
       background-repeat: no-repeat;
       background-image: url("../images/wave.svg"); }
+  .about p {
+    color: #949494; }
 
 .section--gray {
   background-color: #f6f4f4; }
+
+.journal {
+  overflow: hidden;
+  padding: 60px 0; }
+  .journal-grid {
+    overflow: hidden;
+    max-width: 1140px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 21px 0px rgba(6, 6, 6, 0.13); }
+  .journal-item {
+    width: 33.3333%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column; }
+    .journal-item--wide {
+      width: 66.6666%;
+      max-width: 760px;
+      flex-direction: row; }
+    .journal-item__description, .journal-item__picture {
+      height: 380px; }
+    .journal-item__picture {
+      position: relative;
+      font-size: 0; }
+    .journal-item__description {
+      position: relative;
+      padding: 15px;
+      text-align: center; }
+      .journal-item__description:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: calc(50% - 7.5px);
+        top: -15px;
+        width: 0;
+        height: 0;
+        border: 15px solid transparent;
+        border-bottom-color: #fff;
+        border-top: none; }
+      .journal-item__description--right:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -15px;
+        top: 50px;
+        width: 0;
+        height: 0;
+        border: 15px solid transparent;
+        border-right-color: #fff;
+        border-left: none; }
+      .journal-item__description--left {
+        order: -1; }
+        .journal-item__description--left:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: auto;
+          right: -15px;
+          top: 50px;
+          width: 0;
+          height: 0;
+          border: 15px solid transparent;
+          border-left-color: #fff;
+          border-right: none; }
+    .journal-item__icon {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 82px;
+      height: 82px;
+      transform: translate(-50%, -50%); }
+    .journal-item__category {
+      font-size: 11px;
+      font-weight: bold;
+      color: #36aeea;
+      text-transform: uppercase; }
+    .journal-item__heading {
+      margin: 2rem 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-transform: uppercase;
+      font-weight: bold; }
+    .journal-item__details {
+      max-width: 80%;
+      margin: 0 auto; }
+    .journal-item__count {
+      position: absolute;
+      padding: 25px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      font-family: 'Times New Roman', serif;
+      font-style: italic; }
+
+.newsletter-subscribe {
+  padding: 150px 0;
+  background: url("../images/backgrounds/mountains_and_trees.jpg") 0 0 no-repeat; }
+
+.workflow {
+  padding: 80px 0; }
 
 /*# sourceMappingURL=styles.css.map */

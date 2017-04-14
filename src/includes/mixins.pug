@@ -1,0 +1,11 @@
+mixin journal_item(wide, direction)
+    .journal-item(class= wide? 'journal-item--wide' : '')
+        .journal-item__picture
+            img(src='images/grid/grid_mnt_1.jpg' alt='Awesome mount one')
+            .journal-item__icon
+                img(src='images/heart.png', alt='')
+        .journal-item__description(class= direction? 'journal-item__description--'+direction : '')
+            .journal-item__category love
+            h3.journal-item__heading   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, corporis.
+            p.journal-item__details  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus laboriosam, similique ipsum dolor sit amet, consectetur adip?
+            .journal-item__count 01

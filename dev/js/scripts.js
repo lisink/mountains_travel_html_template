@@ -1,0 +1,1 @@
+$(".journal-grid").masonry({itemSelector:".journal-item",columnWidth:380});

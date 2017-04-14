@@ -153,15 +153,12 @@ header {
         display: inline-block;
         font-size: 50px;
         text-transform: uppercase;
-        line-height: 1;
+        line-height: 35px;
         font-weight: bold;
 
         &--fantasy {
-            position: relative;
-            top: -20px;
-
-            color: $main-color;
             @extend %fantasy-font;
+            color: $main-color;
             font-size: 60px;
             font-weight: normal;
             text-transform: none;
@@ -169,7 +166,6 @@ header {
     }
 
     &__description {
-        margin-top: 0;
         color: $secondary-color;
     }
 
@@ -178,6 +174,47 @@ header {
         z-index: 10;
         right: 113px;
         top: -135px;
+    }
+}
+
+.section {
+    &__heading {
+        position: relative;
+        margin: 40px 0;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1.5;
+        color: $headings-color;
+
+        &--small {
+            font-size: 20px;
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: -35px;
+            width: 80px;
+            height: 8px;
+            background-repeat: no-repeat;
+            background-image: url('../images/wave.svg');
+        }
+
+        &--left {
+            text-align: left;
+
+            &:before {
+                left: 0;
+                right: auto;
+                margin: 0;
+            }
+        }
     }
 }
 
@@ -233,8 +270,148 @@ header {
             background-image: url('../images/wave.svg');
         }
     }
+
+    p {
+        color: $muted-text-color;
+    }
 }
 
 .section--gray {
     background-color: #f6f4f4;
+}
+
+.journal {
+    overflow: hidden;
+    padding: 60px 0;
+
+    &-grid {
+        overflow: hidden;
+        max-width: 1140px;
+        margin: 0 auto;
+        box-shadow: 0px 0px 21px 0px rgba(6, 6, 6, 0.13);
+    }
+
+    &-item {
+        width: 33.3333%;
+        max-width: 380px;
+        display: flex;
+        flex-direction: column;
+
+        &--wide {
+            width: 66.6666%;
+            max-width: 380 * 2px;
+            flex-direction: row;
+        }
+
+        &__description,
+        &__picture {
+            height: 380px;
+        }
+
+        &__picture {
+            position: relative;
+            font-size: 0;
+        }
+
+        &__description {
+            position: relative;
+            padding: 15px;
+            text-align: center;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: calc(50% - 7.5px);
+                top: -15px;
+                width: 0;
+                height: 0;
+                border: 15px solid transparent;
+                border-bottom-color: #fff;
+                border-top: none;
+            }
+
+            &--right:before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: -15px;
+                top: 50px;
+                width: 0;
+                height: 0;
+                border: 15px solid transparent;
+                border-right-color: #fff;
+                border-left: none;
+            }
+
+            &--left {
+                order: -1;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: auto;
+                    right: -15px;
+                    top: 50px;
+                    width: 0;
+                    height: 0;
+                    border: 15px solid transparent;
+                    border-left-color: #fff;
+                    border-right: none;
+                }
+            }
+        }
+
+        &__icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 82px;
+            height: 82px;
+            transform: translate(-50%, -50%);
+        }
+
+        &__category {
+            font-size: 11px;
+            font-weight: bold;
+            color: $main-color;
+            text-transform: uppercase;
+        }
+
+        &__heading {
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.5;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        &__details {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        &__count {
+            position: absolute;
+            padding: 25px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+    }
+}
+
+.newsletter-subscribe {
+    padding: 150px 0;
+
+    background: url('../images/backgrounds/mountains_and_trees.jpg') 0 0 no-repeat;
+    // background-attachment: fixed
+}
+
+.workflow {
+    padding: 80px 0;
 }
