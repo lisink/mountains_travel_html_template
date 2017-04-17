@@ -71,41 +71,39 @@ html
                 //- Parallax scrolling here or bg pos fixed
                 .container
                     h2.section__heading.section__heading--small.section__heading--left do you wanna go?
-                    p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi sunt fugit cum, ducimus doloremque expedita ratione reiciendis.
+                    p  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        br
+                        |Quasi sunt fugit cum, ducimus doloremque expedita ratione reiciendis.
                     .input-group
-                        input(type="text" placeholder='Your name:')
-                        input(type="text" placeholder='Your phone:')
-                        input(type="submit" value='order now')
-                        .input-group__hint
+                        .input-group__fields
+                            input(type="text" placeholder='Your name:' class='input-group__text-input')
+                            input(type="text" placeholder='Your phone:' class='input-group__text-input')
+                            input(type="submit" value='order now' class='btn')
+                        .input-group__hint * Your data will not be transfered
             section.workflow
                 .container
                     h2.section__heading how we work
                     ul.stages
-                        li.stage
-                            .stage__number 1
-                            .stage__icon
-                            h4.stage__heading  Lorem ipsum dolor sit
-                            p.stage__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolor, deleniti tempora.
+                        -for (var i = 0; i < 4; i++)
+                            +stage()
             section.travel-offers
                 .container
                     h2.section__heading travel with us
                     ul.locations
-                        li.location
-                            .location__rating
-                            h4.location__title Alps
-                            p.location__description  Lorem ipsum dolor sit amet, consectetur.
-                            footer.location__footer
-                                .location__old-price 3150$
-                                .location__price $793
+                        -for (var i = 0; i < 5; i++)
+                            +location()
+
             section.gallery
                 .container
                     .images-masonry-grid
                         .masonry__tile
                             img(src='' alt='')
+
             section.companies
                 ul.companies-list
                     li.company
                         img(src='' alt='')
+
             section.testimonials
                 .container
                     h2.section__heading our clients say

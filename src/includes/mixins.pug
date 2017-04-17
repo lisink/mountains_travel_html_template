@@ -9,3 +9,25 @@ mixin journal_item(wide, direction)
             h3.journal-item__heading   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, corporis.
             p.journal-item__details  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus laboriosam, similique ipsum dolor sit amet, consectetur adip?
             .journal-item__count 01
+
+mixin stage()
+    li.stage
+        .stage__number 1
+        .stage__icon
+        p.stage__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolor, deleniti tempora.
+
+mixin location()
+    li.location
+        .location__inner
+            .location__rating
+                +rating(5)
+            .location__info
+                h4.location__title Alps
+                p.location__description  Lorem ipsum dolor sit amet, consectetur.
+            footer.location__footer
+                .location__old-price 3150$
+                .location__price $793
+
+mixin rating(count)
+    -for (var i = 0; i < count; i++)
+        span.star
