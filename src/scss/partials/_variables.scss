@@ -5,6 +5,12 @@ $main-color: #36aeea;
 $secondary-color: #95a5ad;
 $muted-text-color: #949494;
 $headings-color: #2c2e37;
+$regular-text-color: #383e4a;
+$footer-text-color: #7ecada;
+$journal-description-color: #777;
+
+// $dotted-overlay: url('../images/backgrounds/dot.svg') 0 0 repeat;
+$dotted-overlay: url('../images/backgrounds/dotted_overlay.png') 0 0 repeat;
 
 @mixin maxw($width) {
     @media (max-width: $width) {
@@ -16,4 +22,8 @@ $headings-color: #2c2e37;
     @media (min-width: $width) {
         @content;
     }
+}
+
+@mixin font-size($font-size) {
+    font-size: $font-size / $base_fz * 1rem;
 }

@@ -1,0 +1,25 @@
+ul.stages
+    -
+        var stages = [
+            {
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolor, deleniti tempora.',
+                icon: 'document'
+            },
+            {
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolor, deleniti tempora.',
+                icon: 'user'
+            },
+            {
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolor, deleniti tempora.',
+                icon: 'book'
+            },
+            {
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolor, deleniti tempora.',
+                icon: 'ok'
+            },
+        ]
+        var counter = 0
+
+    each stage in stages
+        - counter++
+        +stage(stage)&attributes({count: counter})

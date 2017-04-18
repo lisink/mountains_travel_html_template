@@ -1,0 +1,7 @@
+ul.companies-list
+    - var image_path = 'images/brands/'
+    - var companies = ['slack', 'ai', 'google', 'facebook', 'spotify', 'nike']
+
+    each company in companies
+        li.company
+            img(src= image_path + company + '.png'  alt= company)

@@ -1,0 +1,47 @@
+ul.locations
+    -
+        var locations = [
+            {
+                name: 'Carpathians',
+                description: ' Lorem ipsum dolor sit amet, consectetur adipisicing.',
+                rating: 4,
+                price: 793,
+                oldPrice: 3150,
+                class: 'carpathian',
+            },
+            {
+                name: 'Alps',
+                description: 'Consectetur ipsum dolor sit amet,  adipisicing.',
+                rating: 5,
+                price: 1893,
+                oldPrice: 3250,
+                class: 'alps',
+            },
+            {
+                name: 'Pyrenees',
+                description: ' Lorem ipsum dolor sit amet, consectetur adipisicing.',
+                rating: 4,
+                price: 2593,
+                oldPrice: 3150,
+                class: 'pyrenees',
+            },
+            {
+                name: 'Rocky',
+                description: ' Lorem ipsum dolor sit amet, consectetur adipisicing.',
+                rating: 4,
+                price: 2123,
+                oldPrice: 3150,
+                class: 'rocky',
+            },
+            {
+                name: 'Kavkaz',
+                description: ' Lorem ipsum dolor sit amet, consectetur adipisicing.',
+                rating: 4,
+                price: 593,
+                oldPrice: 3150,
+                class: 'kavkaz',
+            }
+        ]
+
+    each item in locations
+        +location(item)

@@ -1,0 +1,36 @@
+.journal-grid
+    -
+        var journalItems = [
+            {
+                category: 'love',
+                title: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, ullam!',
+                details: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus laboriosam, similique ipsum dolor sit amet, consectetur adip?',
+                icon: '',
+                wide: true,
+                descriptionSide: 'right',
+                image: 'images/grid/grid_mnt_1.jpg',
+            },
+            {
+                category: 'tree',
+                title: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, ullam!',
+                details: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus laboriosam, similique ipsum dolor sit amet, consectetur adip?',
+                icon: 'leaf',
+                wide: true,
+                descriptionSide: 'left',
+                image: 'images/grid/grid_mnt_2.jpg',
+            },
+            {
+                category: 'water',
+                title: ' Lorem ipsum dolor sit amet, consectetur <s>adipisicing</s>  elit. Sed, ullam!',
+                details: ' Lorem ipsum dolor sit amet, consectetur adipisicingelit. Dolorem minus laboriosam, similique ipsum dolor sit amet, consectetur adip?',
+                icon: 'drop',
+                wide: false,
+                descriptionSide: 'top',
+                image: 'images/grid/grid_mnt_3.jpg',
+            },
+
+        ]
+        var counter = 0
+    each journal in journalItems
+        - counter++
+        +journal_item(journal)&attributes({count: counter})

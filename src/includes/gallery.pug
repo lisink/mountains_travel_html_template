@@ -1,0 +1,32 @@
+.gallery-grid
+    -
+        var images = [
+            {
+                src: 'images/gallery/3.png',
+                alt: 'third item'
+            },
+            {
+                src: 'images/gallery/5.png',
+                alt: 'fifth item'
+            },
+            {
+                src: 'images/gallery/2.png',
+                alt: 'second item'
+            },
+            {
+                src: 'images/gallery/1.png',
+                alt: 'first item'
+            },
+
+            {
+                src: 'images/gallery/4.png',
+                alt: 'fourth item'
+            },
+            {
+                src: 'images/gallery/6.png',
+                alt: 'sixth item'
+            },
+        ]
+
+    each image in images
+        +gallery_tile(image)
