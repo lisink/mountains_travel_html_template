@@ -9,3 +9,8 @@ $('.gallery-grid').masonry({
   gutter: 30,
   originLeft: true
 });
+
+$('a').click(function (event) {
+  if ($(this).attr('href') == "#")
+    event.preventDefault();
+});

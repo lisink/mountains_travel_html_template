@@ -47,6 +47,7 @@ b {
 p {
     line-height: 1.5;
     margin: 1.5rem 0;
+    @include font-size(18px);
 }
 
 section {
@@ -60,10 +61,12 @@ section {
 
 .logo {
     display: inline-block;
+    text-decoration: none;
 
     @extend %fantasy-font;
 
     font-size: 2rem;
+    transition: text-shadow .3s ease;
 
     &--bright {
         color: $main-color;
@@ -71,6 +74,10 @@ section {
 
     &--muted {
         color: $secondary-color;
+    }
+
+    &:hover {
+        text-shadow: 3px 3px 2px rgba(6, 6, 6, 0.13);
     }
 }
 
@@ -85,8 +92,10 @@ section {
     li {
         display: inline-block;
         margin: 0 10px;
+        border-bottom: 2px solid transparent;
         padding: 10px 0;
         cursor: pointer;
+        transition: border-color .3s ease;
 
         &:hover {
             @extend .nav-active;
@@ -110,11 +119,30 @@ section {
     cursor: pointer;
     outline: none;
     border: none;
+    transition: background-color .3s ease,
+                color .3s ease,
+                border-color .3s ease;
+
+    &:hover {
+        background-color: lighten($main-color, 10%);
+    }
 
     &--hollow {
         background: none;
         border: 2px solid $main-color;
         color: $main-color;
+
+        &:hover {
+            background-color: $main-color;
+            border-color: $main-color;
+            color: #fff;
+        }
+
+        &:active {
+            background-color: darken($main-color, 10%);
+            border-color: darken($main-color, 10%);
+            color: #fff;
+        }
     }
 
     &--callback {
@@ -126,6 +154,10 @@ section {
     &--big {
         font-size: 15px;
         padding: 18px 65px;
+    }
+
+    &:active {
+        background-color: darken($main-color, 10%);
     }
 }
 
@@ -487,6 +519,12 @@ header {
     padding: 0 20px;
     text-align: center;
 
+    &:hover {
+       .stage__icon:before {
+           transform: scale(1.1);
+       }
+    }
+
     &__number {
         position: relative;
         z-index: 5;
@@ -509,6 +547,7 @@ header {
         background-color: #f0f3f6;
         border-radius: 50%;
         margin: 58px auto 30px;
+        cursor: pointer;
 
         &:before {
             content: '';
@@ -517,8 +556,9 @@ header {
             top: 0;
             width: 100%;
             height: 100%;
-            background: url('../images/svg/document.svg') center center no-repeat,  url('../images/polygon.png') center 60% no-repeat;
+            background:  url('../images/svg/document.svg') center center no-repeat,                                 url('../images/polygon.png') center 60% no-repeat;
             z-index: 5;
+            transition: transform .3s ease;
         }
 
         &:after {
@@ -561,7 +601,6 @@ header {
 }
 
 .locations {
-    overflow: hidden;
     margin: 0 -15px;
     display: flex;
     justify-content: space-between;
@@ -572,6 +611,7 @@ header {
     flex-basis: 20%;
 
     &__inner {
+        height: 100%;
         min-height: 380px;
         display: flex;
         flex-direction: column;
@@ -579,6 +619,14 @@ header {
         overflow: hidden;
         border-radius: 6px;
         color: #fff;
+        text-decoration: none;
+        transition: box-shadow .3s ease,
+                    transform .3s ease;
+
+        &:hover {
+            box-shadow: 0 4px 12px 2px rgba(6, 6, 6, 0.5);
+            transform: scale(1.03);
+        }
 
         &.alps {
             background: $dotted-overlay, url('../images/backgrounds/alps.jpg');

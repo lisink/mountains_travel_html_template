@@ -19,7 +19,7 @@ mixin stage(stage)
 
 mixin location(item)
     li.location
-        .location__inner(class= item.class)
+        a.location__inner(class= item.class href= item.href)
             .location__rating
                 +rating(item.rating)
             .location__info
