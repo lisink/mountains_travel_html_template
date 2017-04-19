@@ -1,5 +1,5 @@
 mixin journal_item(item)
-    .journal-item(class= item.wide? 'journal-item--wide' : '')
+    a.journal-item(class= item.wide? 'journal-item--wide' : '')
         .journal-item__picture
             img(src=item.image alt=item.title)
             .journal-item__icon
@@ -37,3 +37,14 @@ mixin rating(count)
 mixin gallery_tile(image)
     .gallery__tile
        img(src= image.src alt= image.alt)
+       .gallery__hover
+
+mixin testimonial(item)
+    li.testimonial
+        blockquote.testimonial__text= item.text
+        .testimonial__author
+            .testimonial__avatar
+                img(src= item.author.image, alt= item.author.name)
+            .testimonial__name
+                b!= item.author.name +'&nbsp;'
+                span.testimonial__job= item.author.jobTitle

@@ -1,6 +1,10 @@
 @import 'partials/variables';
 @import 'partials/utilities';
 
+// Slick carousel
+@import 'slick/slick';
+@import 'slick/slick-theme';
+
 
 %fantasy-font {
     font-family: 'Kaushan Script', cursive;
@@ -11,9 +15,7 @@
 }
 
 :focus {
-    outline-style: dotted;
-    outline-width: 1px;
-    outline-color: #333;
+    outline: none;
 }
 
 body {
@@ -164,7 +166,7 @@ section {
 header {
     background-image: url('../images/backgrounds/hero.jpg');
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: 0 50%;
 }
 
 .hero {
@@ -177,7 +179,7 @@ header {
 
     &__outer {
         position: relative;
-        border: 3px solid #fff;
+        border: 5px solid #fff;
         border-bottom: none;
         color: #fff;
 
@@ -190,7 +192,7 @@ header {
             bottom: 0;
             left: 0;
             width: 100%;
-            border-bottom: 3px solid white;
+            border-bottom: 5px solid white;
         }
     }
 
@@ -216,7 +218,8 @@ header {
     }
 
     &__description {
-        color: $secondary-color;
+        color: #333;
+        text-shadow: 2px 0 15px white;
     }
 
     &__man {
@@ -464,10 +467,6 @@ header {
     background: url('../images/backgrounds/mountains_and_trees.jpg') 0 0 no-repeat;
 }
 
-.newsletter__description {
-
-}
-
 .workflow {
     padding: 80px 0;
 }
@@ -482,12 +481,20 @@ header {
 
     &__text-input {
         border: none;
-        padding: 7px 15px;
+        padding: 15px 15px;
         min-width: 250px;
+        @include font-size(16px);
+        font-family: inherit;
+        vertical-align: middle;
 
         & + & {
             border-left: 1px solid #ddd;
         }
+    }
+
+    &__btn {
+        padding: 19px 30px;
+        vertical-align: middle;
     }
 
     &__hint {
@@ -698,13 +705,40 @@ header {
 .gallery {
     &__tile {
         margin-bottom: 30px;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover {
+            .gallery__hover {
+                opacity: 1;
+                margin: 0;
+            }
+        }
+    }
+
+    &__hover {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: calc(100% - 35px);
+        width: 100%;
+        margin-top: calc(-100% + 35px);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: all .3s ease;
     }
 }
 
-.companies-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.company {
+    &.slick-slide {
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        margin: 0 auto;
+    }
 }
 
 .testimonials {
@@ -728,6 +762,7 @@ header {
         &:before {
             content: '“';
             display: block;
+            margin-top: 20px;
             font-family: Arial, Helvetica, sans-serif;
             @include font-size(92px);
             line-height: 30px;
@@ -808,6 +843,8 @@ header {
 .social-link {
     display: inline-block;
     background: #2ab7ef url('../images/social/social_sprite.png') 25px 25px no-repeat;
+    transition: background-color .3s ease,
+                transform .3s ease;
 
     a {
         display: inline-block;
@@ -821,20 +858,30 @@ header {
 
     &.twitter {
         background-position: -27px 14px;
+
+        @include social-link-bg(#2ab7ef);
     }
 
     &.facebook {
-        background-color: #6788ce;
         background-position: 16px 12px;
+
+        @include social-link-bg(#6788ce);
     }
 
     &.vk {
-        background-color: #54769a;
         background-position: -67px 15px;
+
+        @include social-link-bg(#54769a);
     }
 }
 
 .footer-phone {
     font-weight: bold;
     @include font-size(27px);
+    text-decoration: none;
+
+    &,
+    &:hover {
+        color: inherit;
+    }
 }

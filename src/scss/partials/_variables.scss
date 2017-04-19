@@ -9,7 +9,6 @@ $regular-text-color: #383e4a;
 $footer-text-color: #7ecada;
 $journal-description-color: #777;
 
-// $dotted-overlay: url('../images/backgrounds/dot.svg') 0 0 repeat;
 $dotted-overlay: url('../images/backgrounds/dotted_overlay.png') 0 0 repeat;
 
 @mixin maxw($width) {
@@ -26,4 +25,18 @@ $dotted-overlay: url('../images/backgrounds/dotted_overlay.png') 0 0 repeat;
 
 @mixin font-size($font-size) {
     font-size: $font-size / $base_fz * 1rem;
+}
+
+@mixin social-link-bg($background-color) {
+
+    background-color: $background-color;
+
+    &:hover {
+        background-color: lighten($background-color, 10%);
+    }
+
+    &:active {
+        background-color: darken($background-color, 10%);
+        transform: scale(.9);
+    }
 }

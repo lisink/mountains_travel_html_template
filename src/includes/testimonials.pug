@@ -1,19 +1,40 @@
 ul.testimonials-list
-    li.testimonial
-        blockquote.testimonial__text.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nobis sapiente sint aut at, explicabo, cumque repellat voluptatem, officia rerum optio. Rerum nemo, maiores optio hic eligendi eius in praesentium!
-        .testimonial__author
-            .testimonial__avatar
-                img(src='images/avatars/man_1.jpg', alt='avatar')
-            .testimonial__name
-                b Pavliv Yaroslav
-                span.testimonial__job  Web designer
-    li.testimonial
-        blockquote.testimonial__text.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nobis sapiente sint aut at, explicabo, cumque repellat voluptatem, officia rerum optio. Rerum nemo, maiores optio hic eligendi eius in praesentium!
-        .testimonial__author
-            .testimonial__avatar
-                img(src='images/avatars/man_2.jpg', alt='avatar')
-            .testimonial__name
-                b Pavliv Yaroslav
-                span.testimonial__job  Web designer
+    -
+        var avartars_path = 'images/avatars/'
+        var testimonials = [
+                {
+                    author: {
+                        name: 'Pavliv Yaroslav',
+                        image: avartars_path+'man_1.jpg',
+                        jobTitle: 'Web designer'
+                    },
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nobis sapiente sint aut at, explicabo, cumque repellat voluptatem, officia rerum optio. Rerum nemo, maiores optio hic eligendi eius in praesentium!'
+                },
+                {
+                    author: {
+                        name: 'Anotherman Peter',
+                        image: avartars_path+'man_2.jpg',
+                        jobTitle: 'Software developer'
+                    },
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nobis sapiente sint aut at, explicabo, cumque repellat voluptatem, officia rerum optio. Rerum nemo, maiores optio hic eligendi eius in praesentium!'
+                },
+                {
+                    author: {
+                        name: 'John Doe Peter',
+                        image: avartars_path+'man_1.jpg',
+                        jobTitle: 'Nodejs developer'
+                    },
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nobis sapiente sint aut at, explicabo, cumque repellat voluptatem, officia rerum optio. Rerum nemo, maiores optio hic eligendi eius in praesentium!'
+                },
+                                {
+                    author: {
+                        name: 'Anotherman Peter',
+                        image: avartars_path+'man_2.jpg',
+                        jobTitle: 'Software developer'
+                    },
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nobis sapiente sint aut at, explicabo, cumque repellat voluptatem, officia rerum optio. Rerum nemo, maiores optio hic eligendi eius in praesentium!'
+                },
+        ]
+
+    each testimonial in testimonials
+        +testimonial(testimonial)

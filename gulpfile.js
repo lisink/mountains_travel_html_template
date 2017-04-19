@@ -91,6 +91,19 @@ gulp.task('build_html_prod', function buildHTML() {
         .pipe(gulp.dest(outputPath));
 });
 
+gulp.task('build_js', function() {
+    gulp.src(['src/js/**/*.js', '!src/js/scripts.js'])
+        .pipe(addSrc.append('src/js/scripts.js'))
+        .pipe(concat('scripts.js'))
+        .pipe(minify({
+            ext:{
+                min:'.js'
+            },
+            exclude: ['tasks'],
+            ignoreFiles: ['.combo.js', '-min.js']
+        }))
+        .pipe(gulp.dest(outputPath+'/js'))
+});
 
 gulp.task('serve', function() {
     var server = gls.static(outputPath);
@@ -108,7 +121,7 @@ gulp.task('watch', function () {
     watch('src/scss/**/*.scss', function () {
         gulp.start('build_css');
     });
-    watch('src/js/*.js', function () {
+    watch('src/js/**/*.js', function () {
         gulp.start('build_js');
     });
 });
@@ -118,20 +131,6 @@ gulp.task('imagemin', () =>
         .pipe(imagemin())
         .pipe(gulp.dest(outputPath+'/i/min'))
 );
-
-gulp.task('build_js', function() {
-  gulp.src('./src/js/*.js')
-    .pipe(concat('scripts.js'))
-    .pipe(minify({
-        ext:{
-            src:'-debug.js',
-            min:'.js'
-        },
-        exclude: ['tasks'],
-        ignoreFiles: ['.combo.js', '-min.js']
-    }))
-    .pipe(gulp.dest(outputPath+'/js'))
-});
 
 gulp.task('build', ['build_html', 'build_css', 'build_js']);
 gulp.task('build_prod', ['build_html_prod', 'clean_css']);
