@@ -11,7 +11,7 @@ $('.gallery-grid').masonry({
 });
 
 $('a').click(function (event) {
-  if ($(this).attr('href') == "#")
+  if (this.getAttribute('href') == "#")
     event.preventDefault();
 });
 

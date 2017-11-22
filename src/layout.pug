@@ -1,0 +1,22 @@
+//- Mixins and helper markup
+include templates/common/mixins.pug
+
+doctype html
+html(lang="ru")
+    head
+        block head
+            include templates/common/head.pug
+    body
+        block body_meta
+
+        block header
+            include templates/common/header.pug
+
+        block main_content
+
+        block footer
+            include templates/common/footer.pug
+
+        block scripts
+            include templates/common/scripts.pug
+
