@@ -1,10 +1,7 @@
 @import 'partials/variables';
-
 @import 'partials/utilities';
 
-// Slick carousel
 @import 'slick/slick';
-
 @import 'slick/slick-theme';
 
 %fantasy-font {
@@ -34,8 +31,8 @@ b {
 }
 
 .container {
-    @include minw($lg) {
-        width: $lg - 30px;
+    @include minw($container-width) {
+        width: $container-width - 30px;
         margin: 0 auto;
     }
 

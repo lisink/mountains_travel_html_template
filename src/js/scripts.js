@@ -18,9 +18,9 @@ $('a').click(function (event) {
 $('.companies-list').slick({
   infinite: true,
   slidesToShow: 6,
-  slidesToScroll: 1,
+  slidesToScroll: 2,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 1000,
   arrows: false
 });
 
